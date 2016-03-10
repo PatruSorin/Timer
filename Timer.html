@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <style>
+
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    body {
+        display: table;
+        background: black;
+    }
+
+    p {
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+
+        font-size: 30em; /* Daca vreti sa schimbatii dimensiunea fontului */
+        color: white;
+
+    }
+    </style>
+  </head>
+
+  <body >
+
+    <p id="p1">00:00</p>
+
+      <script>
+
+      function timer()
+      {
+
+            if(s<=0 && m<=0)
+              document.getElementById("p1").innerHTML = "0:00";
+            else
+            {
+
+
+              if(s==0)
+              {
+                m--;
+                s=60;
+              }
+              else
+              {
+                s--;
+              }
+
+
+              if(s>9 )
+                document.getElementById("p1").innerHTML = m+":"+s;
+              else if(s<9 )
+                document.getElementById("p1").innerHTML = m+":0"+s;
+
+
+            }
+
+
+      }
+
+
+            var m=30 ,s=0; //Daca vreti sa schimbatii intervalul de timp modificati s si m
+
+            if(s>9)
+              document.getElementById("p1").innerHTML = m+":"+s;
+            else
+              document.getElementById("p1").innerHTML = m+":0"+s;
+
+           var myVar =setInterval(timer, 1000);
+
+      </script>
+
+
+
+  </body>
+</html>
